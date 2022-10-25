@@ -26,6 +26,7 @@ namespace KamaFi.Retirement.Snapshot.Data
                 e.Property(x => x.PublicKey).ValueGeneratedOnAdd().HasDefaultValueSql("gen_random_uuid()").IsRequired();
                 e.Property(x => x.ShortDescription).HasMaxLength(200).IsRequired();
                 e.Property(x => x.LongDescription).HasMaxLength(5000).IsRequired();
+                e.Property(x => x.Year).IsRequired();
                 e.Property(x => x.Key).HasMaxLength(100).IsRequired();
                 e.Property(x => x.Value).HasMaxLength(500).IsRequired();
                 e.Property(x => x.CreatedAt).ValueGeneratedOnAdd().HasDefaultValueSql("current_timestamp").IsRequired();
