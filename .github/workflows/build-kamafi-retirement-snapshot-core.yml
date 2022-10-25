@@ -7,14 +7,14 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build_kamafi_retirement_snapshot_core:
     uses: ./.github/workflows/build-base.yml
     with:
       configuration: release
       project_file: KamaFi.Retirement.Snapshot.Core/KamaFi.Retirement.Snapshot.Core.csproj
       output_path: app/publish
 
-  build_container:
+  build_kamafi_retirement_snapshot_core_container:
     needs: build
     uses: ./.github/workflows/build-container-base.yml
     with:
