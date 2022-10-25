@@ -1,4 +1,4 @@
-name: build
+name: build-data-migrations
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
       output_path: app/publish
 
   build_kamafi_retirement_snapshot_data_migrations_container:
-    needs: build
+    needs: build_kamafi_retirement_snapshot_data_migrations
     uses: ./.github/workflows/build-container-base.yml
     with:
       configuration: release
