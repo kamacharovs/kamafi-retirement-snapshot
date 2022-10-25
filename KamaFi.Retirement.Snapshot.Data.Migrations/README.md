@@ -6,36 +6,41 @@ This is an overview of how to work with `KamaFi.Retirement.Snapshot.Data.Migrati
 
 1. Make your way to the `KamaFi.Retirement.Snapshot.Data.Migrations` directory
 
-```ps
-cd .\KamaFi.Retirement.Snapshot.Data.Migrations\
-```
+    ```ps
+    cd .\KamaFi.Retirement.Snapshot.Data.Migrations\
+    ```
 
-1.1 (Optional) Update `dotnet tool`
+2. (Optional) Update `dotnet tool`
 
-```ps
-dotnet tool update --global dotnet-ef --version {{version}
-```
+    ```ps
+    dotnet tool update --global dotnet-ef --version {{version}
+    ```
 
-For example
+    For example
 
-```ps
-dotnet tool update --global dotnet-ef --version 6.0.7
-```
+    ```ps
+    dotnet tool update --global dotnet-ef --version 6.0.7
+    ```
 
-2. Run the `dotnet ef migrations add` command
+3. Run the `dotnet ef migrations add` command
 
-```ps
-dotnet ef migrations add {{migration_name}
-```
+    ```ps
+    dotnet ef migrations add {{migration_name}
+    ```
 
 ## How to test locally
 
 1. Start the PostgreSQL docker image. This uses the `docker-compose.yml` file in the root directory of this project
 
-```ps
-docker compose up
-```
+    ```ps
+    docker compose up
+    ```
 
 2. Run the `KamaFi.Retirement.Snapshot.Data.Migrations` project
 3. Connect to the database using the settings in `appsettings.json`
 4. Check if there is data by connecting to the database
+5. Clean up
+
+    ```ps
+    docker compose down
+    ```
