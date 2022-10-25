@@ -5,7 +5,7 @@ namespace KamaFi.Retirement.Snapshot.Data
 {
     public class RetirementSnapshotDbContext : DbContext
     {
-        public virtual DbSet<RetirementFact> RetirementFacts { get; set; }
+        public virtual DbSet<RetirementFact> RetirementFacts => Set<RetirementFact>();
 
         public RetirementSnapshotDbContext(DbContextOptions<RetirementSnapshotDbContext> options)
             : base(options)
