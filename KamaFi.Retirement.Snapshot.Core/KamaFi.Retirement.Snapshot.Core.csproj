@@ -10,4 +10,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\KamaFi.Retirement.Snapshot.Data\KamaFi.Retirement.Snapshot.Data.csproj" />
+    <ProjectReference Include="..\KamaFi.Retirement.Snapshot.Services\KamaFi.Retirement.Snapshot.Services.csproj" />
+  </ItemGroup>
+
 </Project>

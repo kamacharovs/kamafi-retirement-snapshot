@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.UnitTests", "KamaFi.Retirement.Snapshot.UnitTests\KamaFi.Retirement.Snapshot.UnitTests.csproj", "{7C691C53-97D7-414D-A20A-4B0000940F38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Data.Migrations", "KamaFi.Retirement.Snapshot.Data.Migrations\KamaFi.Retirement.Snapshot.Data.Migrations.csproj", "{7ECA4E94-C801-4562-95C4-0817889CC619}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7C691C53-97D7-414D-A20A-4B0000940F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C691C53-97D7-414D-A20A-4B0000940F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C691C53-97D7-414D-A20A-4B0000940F38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ECA4E94-C801-4562-95C4-0817889CC619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ECA4E94-C801-4562-95C4-0817889CC619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ECA4E94-C801-4562-95C4-0817889CC619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ECA4E94-C801-4562-95C4-0817889CC619}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
