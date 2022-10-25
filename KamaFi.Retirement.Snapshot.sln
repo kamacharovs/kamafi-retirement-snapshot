@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33020.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Core", "KamaFi.Retirement.Snapshot.Core\KamaFi.Retirement.Snapshot.Core.csproj", "{82B175F9-6086-4752-ACF5-74477C608CB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Data", "KamaFi.Retirement.Snapshot.Data\KamaFi.Retirement.Snapshot.Data.csproj", "{18DAA3C3-3FB2-4984-8A17-13E3BC7EABB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Services", "KamaFi.Retirement.Snapshot.Services\KamaFi.Retirement.Snapshot.Services.csproj", "{29102AB1-983E-47B0-833C-DCBDFE0043D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.UnitTests", "KamaFi.Retirement.Snapshot.UnitTests\KamaFi.Retirement.Snapshot.UnitTests.csproj", "{7C691C53-97D7-414D-A20A-4B0000940F38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82B175F9-6086-4752-ACF5-74477C608CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82B175F9-6086-4752-ACF5-74477C608CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82B175F9-6086-4752-ACF5-74477C608CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82B175F9-6086-4752-ACF5-74477C608CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18DAA3C3-3FB2-4984-8A17-13E3BC7EABB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18DAA3C3-3FB2-4984-8A17-13E3BC7EABB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18DAA3C3-3FB2-4984-8A17-13E3BC7EABB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18DAA3C3-3FB2-4984-8A17-13E3BC7EABB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29102AB1-983E-47B0-833C-DCBDFE0043D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29102AB1-983E-47B0-833C-DCBDFE0043D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29102AB1-983E-47B0-833C-DCBDFE0043D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29102AB1-983E-47B0-833C-DCBDFE0043D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C691C53-97D7-414D-A20A-4B0000940F38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C691C53-97D7-414D-A20A-4B0000940F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C691C53-97D7-414D-A20A-4B0000940F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C691C53-97D7-414D-A20A-4B0000940F38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0413BD40-AFE8-42BA-9AC4-8CA6953D9D29}
+	EndGlobalSection
+EndGlobal
