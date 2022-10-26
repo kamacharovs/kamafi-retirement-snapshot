@@ -1,4 +1,6 @@
-﻿namespace KamaFi.Retirement.Snapshot.Calculators
+﻿using Excel.FinancialFunctions;
+
+namespace KamaFi.Retirement.Snapshot.Calculators
 {
     public static class FinancialCalculator
     {
@@ -15,31 +17,14 @@
             double presentValue,
             double interestRate,
             double numberOfPeriods,
+            double payments = 0.0,
             int compoundingPeriods = 12,
             int roundingPlaces = 2)
         {
             var interest = interestRate / 100;
+            var futureValue = Financial.Fv(interest / compoundingPeriods, numberOfPeriods, payments, presentValue, PaymentDue.BeginningOfPeriod);
 
-            return Math.Round(presentValue * Math.Pow((1 + interest / compoundingPeriods), numberOfPeriods * compoundingPeriods), roundingPlaces);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="interestRate"></param>
-        /// <param name="numberOfPeriods"></param>
-        /// <param name="payments"></param>
-        /// <param name="roundingPlaces"></param>
-        /// <returns></returns>
-        public static double FutureValueWithPayments(
-            double interestRate,
-            double numberOfPeriods,
-            double payments,
-            int roundingPlaces = 2)
-        {
-            var interest = interestRate / 100;
-
-            return Math.Round(payments * ((Math.Pow(1 + interest, numberOfPeriods) - 1) / interest), roundingPlaces);
+            return Math.Round(futureValue * -1, roundingPlaces);
         }
     }
 }
