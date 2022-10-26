@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33020.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Core", "KamaFi.Retirement.Snapshot.Core\KamaFi.Retirement.Snapshot.Core.csproj", "{82B175F9-6086-4752-ACF5-74477C608CB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KamaFi.Retirement.Snapshot.Core", "KamaFi.Retirement.Snapshot.Core\KamaFi.Retirement.Snapshot.Core.csproj", "{82B175F9-6086-4752-ACF5-74477C608CB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Data", "KamaFi.Retirement.Snapshot.Data\KamaFi.Retirement.Snapshot.Data.csproj", "{18DAA3C3-3FB2-4984-8A17-13E3BC7EABB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KamaFi.Retirement.Snapshot.Data", "KamaFi.Retirement.Snapshot.Data\KamaFi.Retirement.Snapshot.Data.csproj", "{18DAA3C3-3FB2-4984-8A17-13E3BC7EABB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Services", "KamaFi.Retirement.Snapshot.Services\KamaFi.Retirement.Snapshot.Services.csproj", "{29102AB1-983E-47B0-833C-DCBDFE0043D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KamaFi.Retirement.Snapshot.Services", "KamaFi.Retirement.Snapshot.Services\KamaFi.Retirement.Snapshot.Services.csproj", "{29102AB1-983E-47B0-833C-DCBDFE0043D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.UnitTests", "KamaFi.Retirement.Snapshot.UnitTests\KamaFi.Retirement.Snapshot.UnitTests.csproj", "{7C691C53-97D7-414D-A20A-4B0000940F38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KamaFi.Retirement.Snapshot.UnitTests", "KamaFi.Retirement.Snapshot.UnitTests\KamaFi.Retirement.Snapshot.UnitTests.csproj", "{7C691C53-97D7-414D-A20A-4B0000940F38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Data.Migrations", "KamaFi.Retirement.Snapshot.Data.Migrations\KamaFi.Retirement.Snapshot.Data.Migrations.csproj", "{7ECA4E94-C801-4562-95C4-0817889CC619}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KamaFi.Retirement.Snapshot.Data.Migrations", "KamaFi.Retirement.Snapshot.Data.Migrations\KamaFi.Retirement.Snapshot.Data.Migrations.csproj", "{7ECA4E94-C801-4562-95C4-0817889CC619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Calculators", "KamaFi.Retirement.Snapshot.Calculators\KamaFi.Retirement.Snapshot.Calculators.csproj", "{16921097-281E-4149-AB63-77D8C65C55CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Calculators.UnitTests", "KamaFi.Retirement.Snapshot.Calculators.UnitTests\KamaFi.Retirement.Snapshot.Calculators.UnitTests.csproj", "{51E095D9-A10F-4BC0-8D8A-370355ACAE17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{7ECA4E94-C801-4562-95C4-0817889CC619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ECA4E94-C801-4562-95C4-0817889CC619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ECA4E94-C801-4562-95C4-0817889CC619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16921097-281E-4149-AB63-77D8C65C55CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16921097-281E-4149-AB63-77D8C65C55CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16921097-281E-4149-AB63-77D8C65C55CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16921097-281E-4149-AB63-77D8C65C55CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51E095D9-A10F-4BC0-8D8A-370355ACAE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51E095D9-A10F-4BC0-8D8A-370355ACAE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51E095D9-A10F-4BC0-8D8A-370355ACAE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51E095D9-A10F-4BC0-8D8A-370355ACAE17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
