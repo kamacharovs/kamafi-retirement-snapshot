@@ -19,10 +19,11 @@ namespace KamaFi.Retirement.Snapshot.Calculators
             double numberOfPeriods,
             double payments = 0.0,
             int compoundingPeriods = 12,
+            PaymentDue paymentDue = PaymentDue.BeginningOfPeriod,
             int roundingPlaces = 2)
         {
             var interest = interestRate / 100;
-            var futureValue = Financial.Fv(interest / compoundingPeriods, numberOfPeriods, payments, presentValue, PaymentDue.BeginningOfPeriod);
+            var futureValue = Financial.Fv(interest / compoundingPeriods, numberOfPeriods, payments, presentValue, paymentDue);
 
             return Math.Round(futureValue * -1, roundingPlaces);
         }

@@ -47,5 +47,36 @@ namespace KamaFi.Retirement.Snapshot.Calculators.UnitTests
             futureValue.Should().BeGreaterThan(0);
             futureValue.Should().BeGreaterThan(presentValue);
         }
+
+        [Fact]
+        public void FutureValue_WithValidParameters_ShouldBeSuccesfulAndBeDifferentBasedOnPaymentDue()
+        {
+            // Arrange
+            var presentValue = 500;
+            var interestRate = 8;
+            var numberOfPeriods = 12;
+            var payments = 150;
+
+            // Act
+            var futureValueBeginningOfPeriod = FinancialCalculator.FutureValue(
+                presentValue: presentValue,
+                interestRate: interestRate,
+                numberOfPeriods: numberOfPeriods,
+                payments: payments,
+                paymentDue: Excel.FinancialFunctions.PaymentDue.BeginningOfPeriod);
+
+            var futureValueEndOfPeriodd = FinancialCalculator.FutureValue(
+                presentValue: presentValue,
+                interestRate: interestRate,
+                numberOfPeriods: numberOfPeriods,
+                payments: payments,
+                paymentDue: Excel.FinancialFunctions.PaymentDue.EndOfPeriod);
+
+            // Assert
+            futureValueBeginningOfPeriod.Should().BeGreaterThan(0);
+            futureValueEndOfPeriodd.Should().BeGreaterThan(0);
+            futureValueBeginningOfPeriod.Should().NotBe(futureValueEndOfPeriodd);
+            futureValueBeginningOfPeriod.Should().BeGreaterThan(futureValueEndOfPeriodd);
+        }
     }
 }
