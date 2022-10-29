@@ -26,6 +26,7 @@ namespace KamaFi.Retirement.Snapshot.Services
         public async Task<IEnumerable<RetirementFact>> GetAsync()
         {
             return await _context.RetirementFacts
+                .OrderBy(x => x.Group)
                 .ToListAsync();
         }
     }
