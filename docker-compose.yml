@@ -10,3 +10,10 @@ services:
       POSTGRES_DB: retirement_snapshot
     ports:
       - "5438:5432"
+
+  data_migration:
+    build:
+      context: .
+      dockerfile: .ci/dockerfiles/kamafi-retirement-snapshot-data-migrations-local.dockerfile
+    depends_on:
+      - postgres
