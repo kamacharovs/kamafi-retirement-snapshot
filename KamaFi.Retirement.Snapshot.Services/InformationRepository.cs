@@ -6,72 +6,91 @@ namespace KamaFi.Retirement.Snapshot.Services
     public interface IInformationRepository
     {
         public IEnumerable<StartingEarlyEntry> GetAdvantageOfStartingEarly();
+        public IEnumerable<StartingEarlyEntry> GetAdvantageOfStartingEarly(IEnumerable<StartingEarlyEntry> entries);
     }
 
     public class InformationRepository : IInformationRepository
     {
-        public IEnumerable<StartingEarlyEntry> GetAdvantageOfStartingEarly() 
-        {
-            var defaultInterest = 7;
-            var defaultPresentValue = 0;
-            var defaultPayments = 6000;
-            var defaultCompoundingPeriods = 1;
+        private readonly double _defaultInterest;
+        private readonly double _defaultPresentValue;
+        private readonly double _defaultPayments;
+        private readonly int _defaultCompoundingPeriods;
 
+        public InformationRepository()
+        {
+            _defaultInterest = 7;
+            _defaultPresentValue = 0;
+            _defaultPayments = 6000;
+            _defaultCompoundingPeriods = 1;
+        }
+
+        public IEnumerable<StartingEarlyEntry> GetAdvantageOfStartingEarly()
+        {
             var result = new List<StartingEarlyEntry>
             {
                 new StartingEarlyEntry
                 {
                     Years = 0,
-                    Interest = defaultInterest,
-                    PresentValue = defaultPresentValue,
-                    Payments = defaultPayments,
-                    CompoundingPeriods = defaultCompoundingPeriods
+                    Interest = _defaultInterest,
+                    PresentValue = _defaultPresentValue,
+                    Payments = _defaultPayments,
+                    CompoundingPeriods = _defaultCompoundingPeriods
                 },
                 new StartingEarlyEntry
                 {
                     Years = 5,
-                    Interest = defaultInterest,
-                    PresentValue = defaultPresentValue,
-                    Payments = defaultPayments,
-                    CompoundingPeriods = defaultCompoundingPeriods
+                    Interest = _defaultInterest,
+                    PresentValue = _defaultPresentValue,
+                    Payments = _defaultPayments,
+                    CompoundingPeriods = _defaultCompoundingPeriods
                 },
                 new StartingEarlyEntry
                 {
                     Years = 15,
-                    Interest = defaultInterest,
-                    PresentValue = defaultPresentValue,
-                    Payments = defaultPayments,
-                    CompoundingPeriods = defaultCompoundingPeriods
+                    Interest = _defaultInterest,
+                    PresentValue = _defaultPresentValue,
+                    Payments = _defaultPayments,
+                    CompoundingPeriods = _defaultCompoundingPeriods
                 },
                 new StartingEarlyEntry
                 {
                     Years = 25,
-                    Interest = defaultInterest,
-                    PresentValue = defaultPresentValue,
-                    Payments = defaultPayments,
-                    CompoundingPeriods = defaultCompoundingPeriods
+                    Interest = _defaultInterest,
+                    PresentValue = _defaultPresentValue,
+                    Payments = _defaultPayments,
+                    CompoundingPeriods = _defaultCompoundingPeriods
                 },
                 new StartingEarlyEntry
                 {
                     Years = 35,
-                    Interest = defaultInterest,
-                    PresentValue = defaultPresentValue,
-                    Payments = defaultPayments,
-                    CompoundingPeriods = defaultCompoundingPeriods
+                    Interest = _defaultInterest,
+                    PresentValue = _defaultPresentValue,
+                    Payments = _defaultPayments,
+                    CompoundingPeriods = _defaultCompoundingPeriods
                 },
             };
 
-            foreach (var see in result)
+            return GetFutureValue(result);
+        }
+
+        public IEnumerable<StartingEarlyEntry> GetAdvantageOfStartingEarly(IEnumerable<StartingEarlyEntry> entries)
+        {
+            return GetFutureValue(entries);
+        }
+
+        private IEnumerable<StartingEarlyEntry> GetFutureValue(IEnumerable<StartingEarlyEntry> entries)
+        {
+            foreach (var entry in entries)
             {
-                see.Amount = FinancialCalculator.FutureValue(
-                    see.PresentValue,
-                    see.Interest,
-                    see.Years,
-                    see.Payments,
-                    see.CompoundingPeriods);
+                entry.Amount = FinancialCalculator.FutureValue(
+                    entry.PresentValue,
+                    entry.Interest,
+                    entry.Years,
+                    entry.Payments,
+                    entry.CompoundingPeriods);
             }
 
-            return result;
+            return entries;
         }
     }
 }
