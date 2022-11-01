@@ -10,7 +10,8 @@ var services = builder.Services;
 var config = builder.Configuration;
 
 services.AddDataConfiguration(config)
-    .AddTransient<IRetirementFactRepository, RetirementFactRepository>();
+    .AddTransient<IRetirementFactRepository, RetirementFactRepository>()
+    .AddSingleton<IInformationRepository, InformationRepository>();
 
 services.AddEndpointsApiExplorer()
     .AddSwaggerGen()
