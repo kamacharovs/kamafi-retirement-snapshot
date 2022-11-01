@@ -15,5 +15,10 @@ services:
     build:
       context: .
       dockerfile: .ci/dockerfiles/kamafi-retirement-snapshot-data-migrations-local.dockerfile
+    environment:
+      RetirementSnapshotDb__Host: postgres
+      RetirementSnapshotDb__Username: admin
+      RetirementSnapshotDb__Password: admin
+      RetirementSnapshotDb__DatabaseName: retirement_snapshot
     depends_on:
       - postgres

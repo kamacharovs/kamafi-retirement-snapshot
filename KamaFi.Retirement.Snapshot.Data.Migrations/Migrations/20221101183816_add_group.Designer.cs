@@ -3,6 +3,7 @@ using System;
 using KamaFi.Retirement.Snapshot.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace KamaFi.Retirement.Snapshot.Data.Migrations.Migrations
 {
     [DbContext(typeof(RetirementSnapshotDbContext))]
-    partial class RetirementSnapshotDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221101183816_add_group")]
+    partial class add_group
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

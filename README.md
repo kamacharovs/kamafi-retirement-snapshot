@@ -11,7 +11,7 @@ How to run it
 From the root directory
 
 ```ps
-docker build -f .ci/dockerfiles/kamafi-retirement-snapshot-data-migrations-local.dockerfile -t migration .
+docker build -f .ci/dockerfiles/kamafi-retirement-snapshot-data-migrations-local.dockerfile -t kamafi-retirement-snapshot_data_migration .
 ```
 
 ```ps
@@ -28,24 +28,24 @@ docker-compose up --force-recreate
 
 1. Stop the container(s) using the following command:
 
-```ps
-docker-compose down
-```
+    ```ps
+    docker-compose down
+    ```
 
 2. Delete all containers using the following command:
 
-```ps
-docker rm -f $(docker ps -a -q)
-```
+    ```ps
+    docker rm -f $(docker ps -a -q)
+    ```
 
 3. Delete all volumes using the following command:
 
-```ps
-docker volume rm $(docker volume ls -q)
-```
+    ```ps
+    docker volume rm $(docker volume ls -q)
+    ```
 
 4. Restart the containers using the following command:
 
-```ps
-docker-compose up -d
-```
+    ```ps
+    docker-compose up -d
+    ```
