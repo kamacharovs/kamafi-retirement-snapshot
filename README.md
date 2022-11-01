@@ -24,6 +24,19 @@ Re-create the docker images
 docker-compose up --force-recreate
 ```
 
+#### Docker
+
+From root directory `/kamafi-retirement-snapshot`
+
+```ps
+docker-compose up
+```
+
+This will then run the `docker-compose.yml` configuration, which will do the following:
+
+- Create a PostgreSQL database
+- Run the `KamaFi.Retirement.Snapshot.Data.Migrations` to create the `retirement_snapshot` database, run the EF migrations and insert the fake data. Essentially what is defined in the project
+
 #### Docker clean up
 
 1. Stop the container(s) using the following command:
