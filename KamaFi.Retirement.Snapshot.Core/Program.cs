@@ -1,7 +1,6 @@
-using KamaFi.Retirement.Snapshot.Data;
-using KamaFi.Retirement.Snapshot.Data.Options;
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using KamaFi.Retirement.Snapshot.Data.Options;
 using KamaFi.Retirement.Snapshot.Services;
 using KamaFi.Retirement.Snapshot.Data.Extensions;
 
@@ -22,7 +21,7 @@ services.AddMvcCore()
     .AddJsonOptions(x =>
     {
         x.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
-        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     });
 
 var app = builder.Build();
