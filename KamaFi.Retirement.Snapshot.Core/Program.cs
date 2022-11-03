@@ -9,6 +9,7 @@ var services = builder.Services;
 var config = builder.Configuration;
 
 services.AddDataConfiguration(config)
+    .AddTransient<IRetirementRepository, RetirementRepository>()
     .AddTransient<IRetirementFactRepository, RetirementFactRepository>()
     .AddSingleton<IInformationRepository, InformationRepository>();
 
