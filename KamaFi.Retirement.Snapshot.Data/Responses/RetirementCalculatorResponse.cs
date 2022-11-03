@@ -11,7 +11,7 @@ namespace KamaFi.Retirement.Snapshot.Data.Responses
     {
         public int YearsInRetirement { get; set; }
         public double AmountAtRetirementAge { get; set; }
-        public double AmountNeededAtRetirementAget { get; set; }
+        public double AmountNeededAtRetirementAge { get; set; }
 
         public RetirementCalculatorRequest? Request { get; set; }
     }

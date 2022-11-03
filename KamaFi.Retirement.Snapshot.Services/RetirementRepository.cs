@@ -24,12 +24,12 @@ namespace KamaFi.Retirement.Snapshot.Services
         {
             var yearsInRetirement = request.LifeExpectancy - request.RetirementAge;
             var yearsUntilRetirement = request.RetirementAge - request.Age;
-
             var futureValueOfSavings = FinancialCalculator.FutureValue(
                 presentValue: request.SavingsTotal,
                 interestRate: request.InvestmentRateOfReturn,
                 numberOfPeriods: yearsUntilRetirement,
                 payments: request.SavingsMonthly);
+            var amountNeededAtRetirementAge = yearsInRetirement * 12 * request.RetirementSpendingMonthly;
 
             // TODO validations
             if (yearsInRetirement <= 0) { }
@@ -38,6 +38,7 @@ namespace KamaFi.Retirement.Snapshot.Services
             {
                 YearsInRetirement = yearsInRetirement,
                 AmountAtRetirementAge = futureValueOfSavings,
+                AmountNeededAtRetirementAge = amountNeededAtRetirementAge,
                 Request = request
             };
 
