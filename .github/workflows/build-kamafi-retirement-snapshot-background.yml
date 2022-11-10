@@ -1,0 +1,25 @@
+name: build-background
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build_kamafi_retirement_snapshot_background:
+    uses: ./.github/workflows/build-base.yml
+    with:
+      configuration: release
+      project_file: KamaFi.Retirement.Snapshot.Background/KamaFi.Retirement.Snapshot.Background.csproj
+      output_path: app/publish
+
+  build_kamafi_retirement_snapshot_background_container:
+    needs: build_kamafi_retirement_snapshot_background
+    uses: ./.github/workflows/build-container-base.yml
+    with:
+      configuration: release
+      project_file: KamaFi.Retirement.Snapshot.Background/KamaFi.Retirement.Snapshot.Background.csproj
+      output_path: app/publish
+      dockerfile: kamafi-retirement-snapshot-background.dockerfile
+      tag: kamafi-retirement-snapshot-background:latest

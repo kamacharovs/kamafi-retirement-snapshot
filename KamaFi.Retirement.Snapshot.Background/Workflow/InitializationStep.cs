@@ -10,7 +10,9 @@ namespace KamaFi.Retirement.Snapshot.Background.Workflow
     {
         public async Task ExecuteAsync(CancellationToken cancellationToken)
         {
-            Console.WriteLine($"Hello from {nameof(InitializationStep)}");
+            var t = new Task( () => Console.WriteLine($"Hello from {nameof(InitializationStep)}"));
+
+            await t;
         }
     }
 }
