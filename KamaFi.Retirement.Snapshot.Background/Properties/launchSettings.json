@@ -1,7 +1,7 @@
 ﻿{
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "KamaFi.Retirement.Snapshot.Core": {
+    "KamaFi.Retirement.Snapshot.Background": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5156",
