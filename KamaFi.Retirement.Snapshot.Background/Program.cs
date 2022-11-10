@@ -7,7 +7,8 @@ var config = builder.Configuration;
 
 services.Configure<BackgroundServiceOptions>(config.GetSection(nameof(BackgroundServiceOptions)))
     .AddHostedService<Marshaller>()
-    .AddTransient<IStep, InitializationStep>();
+    .AddTransient<IStep, InitializationStep>()
+    .AddTransient<IStep, SecondaryStep>();
 
 services.AddHealthChecks();
 
