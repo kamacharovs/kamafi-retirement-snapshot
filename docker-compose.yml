@@ -9,12 +9,12 @@ services:
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: retirement_snapshot
     ports:
-      - "5438:5432"
+      - 5438:5432
 
   data_migration:
     build:
       context: .
-      dockerfile: .ci/dockerfiles/kamafi-retirement-snapshot-data-migrations-local.dockerfile
+      dockerfile: .ci/dockerfiles/locals/kamafi-retirement-snapshot-data-migrations.dockerfile
     environment:
       RetirementSnapshotDb__Host: postgres
       RetirementSnapshotDb__Username: admin
@@ -22,3 +22,12 @@ services:
       RetirementSnapshotDb__DatabaseName: retirement_snapshot
     depends_on:
       - postgres
+
+  background:
+    build:
+      context: .
+      dockerfile: .ci/dockerfiles/locals/kamafi-retirement-snapshot-background.dockerfile
+    depends_on:
+      - data_migration
+    environment:
+      BackgroundServiceOptions__Period: 3
