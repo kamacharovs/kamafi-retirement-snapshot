@@ -9,6 +9,7 @@ namespace KamaFi.Retirement.Snapshot.Services
 {
     public interface IRetirementFactRepository
     {
+        Task<RetirementFact> GetAsync(int retirementFactId);
         Task<IEnumerable<RetirementFact>> GetAsync();
         Task<RetirementFact> AddAsync(RetirementFactAddRequest request);
         Task DeleteAsync(int retirementFactId);
@@ -27,7 +28,7 @@ namespace KamaFi.Retirement.Snapshot.Services
             _context = context;
         }
 
-        private async Task<RetirementFact> GetAsync(int retirementFactId)
+        public async Task<RetirementFact> GetAsync(int retirementFactId)
         {
             return await _context.RetirementFacts
                 .FirstOrDefaultAsync(x => x.RetirementFactId == retirementFactId)
