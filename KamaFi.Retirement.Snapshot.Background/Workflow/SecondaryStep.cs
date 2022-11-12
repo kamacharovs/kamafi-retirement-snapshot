@@ -4,7 +4,7 @@
     {
         public async Task ExecuteAsync(CancellationToken cancellationToken)
         {
-            Console.WriteLine($"Hello from {nameof(SecondaryStep)}");
+            await Task.Run(() => Console.WriteLine($"Hello from {nameof(SecondaryStep)}"));
         }
     }
 }

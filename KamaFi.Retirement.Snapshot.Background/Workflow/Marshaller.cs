@@ -30,6 +30,7 @@ namespace KamaFi.Retirement.Snapshot.Background.Workflow
                     foreach (var step in _steps)
                     {
                         cancellationToken.ThrowIfCancellationRequested();
+                        
                         await step.ExecuteAsync(cancellationToken);
                     }
 
