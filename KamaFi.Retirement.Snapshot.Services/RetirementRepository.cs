@@ -2,6 +2,7 @@
 using KamaFi.Retirement.Snapshot.Data.Responses;
 using KamaFi.Retirement.Snapshot.Calculators;
 using Microsoft.Extensions.Logging;
+using KamaFi.Retirement.Snapshot.Data.Exceptions;
 
 namespace KamaFi.Retirement.Snapshot.Services
 {
@@ -24,15 +25,16 @@ namespace KamaFi.Retirement.Snapshot.Services
         {
             var yearsInRetirement = request.LifeExpectancy - request.RetirementAge;
             var yearsUntilRetirement = request.RetirementAge - request.Age;
+
+            if (yearsInRetirement <= 0) throw new KamaFiBadRequestException("Years in retirement cannot be less than or equal to 0");
+            if (yearsUntilRetirement < 0) throw new KamaFiBadRequestException("Years until retirement cannot be less than 0");
+
             var futureValueOfSavings = FinancialCalculator.FutureValue(
                 presentValue: request.SavingsTotal,
                 interestRate: request.InvestmentRateOfReturn,
                 numberOfPeriods: yearsUntilRetirement,
                 payments: request.SavingsMonthly);
             var amountNeededAtRetirementAge = yearsInRetirement * 12 * request.RetirementSpendingMonthly;
-
-            // TODO validations
-            if (yearsInRetirement <= 0) { }
 
             var response = new RetirementCalculatorResponse
             {

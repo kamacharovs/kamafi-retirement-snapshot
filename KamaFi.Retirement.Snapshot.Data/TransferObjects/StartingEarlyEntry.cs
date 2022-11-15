@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KamaFi.Retirement.Snapshot.Data.TransferObjects
+﻿namespace KamaFi.Retirement.Snapshot.Data.TransferObjects
 {
     public class StartingEarlyEntry
     {
