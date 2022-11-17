@@ -2,6 +2,6 @@
 {
     public interface IStep
     {
-        Task ExecuteAsync(CancellationToken cancellationToken);
+        Task ExecuteAsync(IStepContext context, CancellationToken cancellationToken);
     }
 }

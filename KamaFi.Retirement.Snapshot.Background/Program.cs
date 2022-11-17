@@ -1,4 +1,5 @@
 ﻿using KamaFi.Retirement.Snapshot.Background.Workflow;
+using KamaFi.Retirement.Snapshot.Background.Workflow.Contexts;
 using KamaFi.Retirement.Snapshot.Background.Workflow.Interfaces;
 using KamaFi.Retirement.Snapshot.Data.Options;
 
@@ -8,6 +9,7 @@ var config = builder.Configuration;
 
 services.Configure<BackgroundServiceOptions>(config.GetSection(nameof(BackgroundServiceOptions)))
     .AddHostedService<Marshaller>()
+    .AddTransient<IStepContext, StepContext>()
     .AddTransient<IStep, InitializationStep>()
     .AddTransient<IStep, SecondaryStep>();
 

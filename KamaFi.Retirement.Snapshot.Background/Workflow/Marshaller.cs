@@ -8,15 +8,18 @@ namespace KamaFi.Retirement.Snapshot.Background.Workflow
     {
         private readonly ILogger<Marshaller> _logger;
         private readonly IEnumerable<IStep> _steps;
+        private readonly IStepContext _stepContext;
         private readonly TimeSpan _period;
 
         public Marshaller(
             ILogger<Marshaller> logger,
             IEnumerable<IStep> steps,
+            IStepContext stepContext,
             IOptions<BackgroundServiceOptions> options)
         {
             _logger = logger;
             _steps = steps;
+            _stepContext = stepContext;
             _period = TimeSpan.FromSeconds(options.Value.Period);
         }
 
@@ -30,7 +33,7 @@ namespace KamaFi.Retirement.Snapshot.Background.Workflow
                     {
                         cancellationToken.ThrowIfCancellationRequested();
                         
-                        await step.ExecuteAsync(cancellationToken);
+                        await step.ExecuteAsync(_stepContext, cancellationToken);
                     }
 
                     await Task.Delay(_period, cancellationToken);
