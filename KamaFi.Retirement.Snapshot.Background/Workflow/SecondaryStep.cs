@@ -1,4 +1,6 @@
-﻿namespace KamaFi.Retirement.Snapshot.Background.Workflow
+﻿using KamaFi.Retirement.Snapshot.Background.Workflow.Interfaces;
+
+namespace KamaFi.Retirement.Snapshot.Background.Workflow
 {
     public class SecondaryStep : IStep
     {

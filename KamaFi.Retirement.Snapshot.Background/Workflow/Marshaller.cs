@@ -1,6 +1,5 @@
-﻿using KamaFi.Retirement.Snapshot.Data.Options;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+﻿using KamaFi.Retirement.Snapshot.Background.Workflow.Interfaces;
+using KamaFi.Retirement.Snapshot.Data.Options;
 using Microsoft.Extensions.Options;
 
 namespace KamaFi.Retirement.Snapshot.Background.Workflow

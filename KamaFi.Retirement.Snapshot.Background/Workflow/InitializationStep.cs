@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using KamaFi.Retirement.Snapshot.Background.Workflow.Interfaces;
 
 namespace KamaFi.Retirement.Snapshot.Background.Workflow
 {

@@ -1,4 +1,4 @@
-﻿namespace KamaFi.Retirement.Snapshot.Background.Workflow
+﻿namespace KamaFi.Retirement.Snapshot.Background.Workflow.Interfaces
 {
     public interface IStep
     {

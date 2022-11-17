@@ -1,4 +1,5 @@
 ﻿using KamaFi.Retirement.Snapshot.Background.Workflow;
+using KamaFi.Retirement.Snapshot.Background.Workflow.Interfaces;
 using KamaFi.Retirement.Snapshot.Data.Options;
 
 var builder = WebApplication.CreateBuilder(args);
