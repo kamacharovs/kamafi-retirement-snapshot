@@ -18,6 +18,7 @@ services.AddEndpointsApiExplorer()
     .Configure<RetirementSnapshotOptions>(config.GetSection(RetirementSnapshotOptions.Section));
 
 services.AddControllers();
+services.AddHealthChecks();
 services.AddMvcCore()
     .AddJsonOptions(x =>
     {
@@ -33,6 +34,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+app.UseRouting();
 app.UseAuthorization();
-app.MapControllers();
+app.UseEndpoints(e =>
+{
+    e.MapControllers();
+    e.MapHealthChecks("/health");
+});
+
 app.Run();

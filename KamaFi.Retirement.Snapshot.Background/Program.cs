@@ -8,10 +8,12 @@ var services = builder.Services;
 var config = builder.Configuration;
 
 services.Configure<BackgroundServiceOptions>(config.GetSection(nameof(BackgroundServiceOptions)))
+    .Configure<BackgroundServiceApiOptions>(config.GetSection(nameof(BackgroundServiceApiOptions)))
     .AddHostedService<Marshaller>()
     .AddTransient<IStepContext, StepContext>()
     .AddTransient<IStep, InitializationStep>()
-    .AddTransient<IStep, SecondaryStep>();
+    .AddTransient<IStep, SecondaryStep>()
+    .AddTransient<IStep, CheckCoreHealthStep>();
 
 services.AddHealthChecks();
 

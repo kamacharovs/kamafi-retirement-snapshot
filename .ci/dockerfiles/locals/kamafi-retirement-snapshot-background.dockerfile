@@ -10,5 +10,5 @@ RUN dotnet publish -c release /KamaFi.Retirement.Snapshot.Background/KamaFi.Reti
 
 WORKDIR /app/publish
 
-EXPOSE 80
+EXPOSE 5156
 ENTRYPOINT ["dotnet", "KamaFi.Retirement.Snapshot.Background.dll"]

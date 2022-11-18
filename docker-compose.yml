@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.9"
 
 services:
   postgres:
@@ -23,11 +23,32 @@ services:
     depends_on:
       - postgres
 
+  core:
+    build:
+      context: .
+      dockerfile: .ci/dockerfiles/locals/kamafi-retirement-snapshot-core.dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://localhost:5124
+      RetirementSnapshotDb__Host: postgres
+      RetirementSnapshotDb__Username: admin
+      RetirementSnapshotDb__Password: admin
+      RetirementSnapshotDb__DatabaseName: retirement_snapshot
+    depends_on:
+      - data_migration
+    ports:
+      - 5124:5124
+
   background:
     build:
       context: .
       dockerfile: .ci/dockerfiles/locals/kamafi-retirement-snapshot-background.dockerfile
     depends_on:
-      - data_migration
+      - core
     environment:
+      ASPNETCORE_ENVIRONMENT: Development
       BackgroundServiceOptions__Period: 3
+      BackgroundServiceApiOptions_BaseUrl: http://core:5124
+      BackgroundServiceApiOptions_Endpoint: /health
+    ports:
+      - 5156:5156
