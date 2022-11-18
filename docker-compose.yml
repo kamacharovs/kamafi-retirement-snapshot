@@ -27,6 +27,7 @@ services:
     build:
       context: .
       dockerfile: .ci/dockerfiles/locals/kamafi-retirement-snapshot-core.dockerfile
+    network_mode: host
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: http://localhost:5124
@@ -36,8 +37,6 @@ services:
       RetirementSnapshotDb__DatabaseName: retirement_snapshot
     depends_on:
       - data_migration
-    ports:
-      - 5124:5124
 
   background:
     build:
@@ -45,10 +44,10 @@ services:
       dockerfile: .ci/dockerfiles/locals/kamafi-retirement-snapshot-background.dockerfile
     depends_on:
       - core
+    network_mode: host
     environment:
       ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://localhost:5156
       BackgroundServiceOptions__Period: 3
-      BackgroundServiceApiOptions_BaseUrl: http://core:5124
-      BackgroundServiceApiOptions_Endpoint: /health
-    ports:
-      - 5156:5156
+      BackgroundServiceApiOptions__BaseUrl: http://localhost:5124
+      BackgroundServiceApiOptions__Endpoint: /health
