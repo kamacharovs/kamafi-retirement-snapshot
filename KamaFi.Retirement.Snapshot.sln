@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KamaFi.Retirement.Snapshot.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KamaFi.Retirement.Snapshot.Data.Migrations", "KamaFi.Retirement.Snapshot.Data.Migrations\KamaFi.Retirement.Snapshot.Data.Migrations.csproj", "{7ECA4E94-C801-4562-95C4-0817889CC619}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Calculators", "KamaFi.Retirement.Snapshot.Calculators\KamaFi.Retirement.Snapshot.Calculators.csproj", "{16921097-281E-4149-AB63-77D8C65C55CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KamaFi.Retirement.Snapshot.Calculators", "KamaFi.Retirement.Snapshot.Calculators\KamaFi.Retirement.Snapshot.Calculators.csproj", "{16921097-281E-4149-AB63-77D8C65C55CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Calculators.UnitTests", "KamaFi.Retirement.Snapshot.Calculators.UnitTests\KamaFi.Retirement.Snapshot.Calculators.UnitTests.csproj", "{51E095D9-A10F-4BC0-8D8A-370355ACAE17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KamaFi.Retirement.Snapshot.Calculators.UnitTests", "KamaFi.Retirement.Snapshot.Calculators.UnitTests\KamaFi.Retirement.Snapshot.Calculators.UnitTests.csproj", "{51E095D9-A10F-4BC0-8D8A-370355ACAE17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Background", "KamaFi.Retirement.Snapshot.Background\KamaFi.Retirement.Snapshot.Background.csproj", "{3CA6736C-3464-499D-8ADC-4F315B21A3F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{51E095D9-A10F-4BC0-8D8A-370355ACAE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51E095D9-A10F-4BC0-8D8A-370355ACAE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51E095D9-A10F-4BC0-8D8A-370355ACAE17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CA6736C-3464-499D-8ADC-4F315B21A3F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA6736C-3464-499D-8ADC-4F315B21A3F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA6736C-3464-499D-8ADC-4F315B21A3F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA6736C-3464-499D-8ADC-4F315B21A3F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

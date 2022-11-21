@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\KamaFi.Retirement.Snapshot.Calculators\KamaFi.Retirement.Snapshot.Calculators.csproj" />
     <ProjectReference Include="..\KamaFi.Retirement.Snapshot.Data\KamaFi.Retirement.Snapshot.Data.csproj" />
   </ItemGroup>
 

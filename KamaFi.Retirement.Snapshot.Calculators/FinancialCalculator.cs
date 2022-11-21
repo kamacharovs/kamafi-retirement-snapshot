@@ -23,7 +23,7 @@ namespace KamaFi.Retirement.Snapshot.Calculators
             int roundingPlaces = 2)
         {
             var interest = interestRate / 100;
-            var futureValue = Financial.Fv(interest / compoundingPeriods, numberOfPeriods, payments, presentValue, paymentDue);
+            var futureValue = Financial.Fv(interest / compoundingPeriods, numberOfPeriods * compoundingPeriods, payments, presentValue, paymentDue);
 
             return Math.Round(futureValue * -1, roundingPlaces);
         }
