@@ -2,7 +2,7 @@
 using KamaFi.Retirement.Snapshot.Data.Options;
 using Microsoft.Extensions.Options;
 
-namespace KamaFi.Retirement.Snapshot.Background.Workflow
+namespace KamaFi.Retirement.Snapshot.Background.Workflow.Steps
 {
     public class CheckCoreHealthStep : IStep
     {

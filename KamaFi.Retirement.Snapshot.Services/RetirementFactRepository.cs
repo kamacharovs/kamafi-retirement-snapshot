@@ -9,10 +9,10 @@ namespace KamaFi.Retirement.Snapshot.Services
 {
     public interface IRetirementFactRepository
     {
-        Task<RetirementFact> GetAsync(int retirementFactId);
-        Task<IEnumerable<RetirementFact>> GetAsync();
-        Task<RetirementFact> AddAsync(RetirementFactAddRequest request);
-        Task DeleteAsync(int retirementFactId);
+        public Task<RetirementFact> GetAsync(int retirementFactId);
+        public Task<IEnumerable<RetirementFact>> GetAsync();
+        public Task<RetirementFact> AddAsync(RetirementFactAddRequest request);
+        public Task DeleteAsync(int retirementFactId);
     }
 
     public class RetirementFactRepository : IRetirementFactRepository

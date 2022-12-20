@@ -1,6 +1,6 @@
 ﻿using KamaFi.Retirement.Snapshot.Background.Workflow.Interfaces;
 
-namespace KamaFi.Retirement.Snapshot.Background.Workflow
+namespace KamaFi.Retirement.Snapshot.Background.Workflow.Steps
 {
     public class InitializationStep : IStep
     {
