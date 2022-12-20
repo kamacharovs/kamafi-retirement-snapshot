@@ -27,5 +27,25 @@ namespace KamaFi.Retirement.Snapshot.Calculators
 
             return Math.Round(futureValue * -1, roundingPlaces);
         }
+
+        // Future value of your Roth IRA
+        public static double RothIraFutureValue(
+            double presentValue,
+            double interestRate,
+            double years,
+            double monthlyPayments,
+            int roundingPlaces = 2)
+        {
+            double maxYearlyContribution = 6000;
+            var yearlyPayments = monthlyPayments * 12;
+
+            if (yearlyPayments > maxYearlyContribution) throw new Exception("Over limit");
+
+            var interest = interestRate / 100;
+            var compoundingPeriods = 12;
+            var futureValue = Financial.Fv(interest / compoundingPeriods, years * compoundingPeriods, monthlyPayments, presentValue, PaymentDue.BeginningOfPeriod);
+
+            return Math.Round(futureValue * -1, roundingPlaces);
+        }
     }
 }

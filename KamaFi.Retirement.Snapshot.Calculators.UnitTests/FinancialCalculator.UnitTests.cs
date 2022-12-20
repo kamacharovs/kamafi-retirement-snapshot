@@ -78,5 +78,46 @@ namespace KamaFi.Retirement.Snapshot.Calculators.UnitTests
             futureValueBeginningOfPeriod.Should().NotBe(futureValueEndOfPeriodd);
             futureValueBeginningOfPeriod.Should().BeGreaterThan(futureValueEndOfPeriodd);
         }
+
+        #region RothIraFutureValue
+        [Theory]
+        [InlineData(10.0, 8.0, 10, 500)]
+        [InlineData(14879.12, 8.0, 10, 350)]
+        [InlineData(50000.0, 8.0, 10, 100)]
+        [InlineData(50028.0, 8.0, 10, 500, 3)]
+        public void RothIraFutureValue_WithValidParameters_ShouldBeSuccesfulAndGreaterThanPresentValue(
+            double presentValue,
+            double interestRate,
+            double years,
+            double monthlyPayments,
+            int roundingPlaces = 2)
+        {
+            // Act
+            var act = FinancialCalculator.RothIraFutureValue(
+                presentValue, 
+                interestRate, 
+                years,
+                monthlyPayments,
+                roundingPlaces: roundingPlaces);
+
+            // Assert
+            act.Should().BeGreaterThan(0);
+            act.Should().BeGreaterThan(presentValue);
+        }
+
+        [Fact]
+        public void RothIraFutureValue_WithValidParametersButNoContributions_ShouldBeSuccesfulAndGreaterThanPresentValue()
+        {
+            // Arrange
+            var presentValue = 500;
+
+            // Act
+            var act = FinancialCalculator.RothIraFutureValue(presentValue, 8, 5,0);
+
+            // Assert
+            act.Should().BeGreaterThan(0);
+            act.Should().BeGreaterThan(presentValue);
+        }
+        #endregion
     }
 }
