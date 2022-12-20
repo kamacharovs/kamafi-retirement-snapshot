@@ -2,8 +2,11 @@
 {
     public interface IStepContext
     {
-        public void IncrementCounter(int n);
-        public void DecrementCounter(int n);
-        public int GetCounter();
+        void SetIsCoreHealthy(bool health);
+        bool IsCoreHealthy();
+
+        void IncrementCounter(int n);
+        void DecrementCounter(int n);
+        int GetCounter();
     }
 }

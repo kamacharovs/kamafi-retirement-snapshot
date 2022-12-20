@@ -25,10 +25,12 @@ namespace KamaFi.Retirement.Snapshot.Background.Workflow.Steps
                     var responseString = await response.Content.ReadAsStringAsync();
 
                     Console.WriteLine($"Core is {responseString}");
+                    context.SetIsCoreHealthy(true);
                 }
                 else
                 {
                     Console.WriteLine("Something unexpected happened. Core is not reachable");
+                    context.SetIsCoreHealthy(false);
                 }
             }          
         }
