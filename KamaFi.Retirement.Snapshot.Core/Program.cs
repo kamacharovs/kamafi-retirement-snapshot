@@ -24,6 +24,7 @@ services.AddMvcCore()
     {
         x.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
         x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 
 var app = builder.Build();
