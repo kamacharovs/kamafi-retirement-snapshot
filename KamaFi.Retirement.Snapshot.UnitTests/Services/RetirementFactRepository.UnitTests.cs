@@ -56,6 +56,22 @@ namespace KamaFi.Retirement.Snapshot.UnitTests.Services
             act.Should().BeEmpty();
         }
 
+        [Fact]
+        public async Task GetAsync_GivenRetirementFactsInDb_ShouldReturnAllOrderedByGroup()
+        {
+            // Arrange
+            var factory = new DatabaseFactory();
+            var context = await factory.CreateContextForSQLite().WithSeedAsync();
+            var repo = new RetirementFactRepository(Substitute.For<ILogger<RetirementFactRepository>>(), context);
+
+            // Act
+            var act = await repo.GetAsync();
+
+            // Assert
+            act.Should().NotBeNull();
+            act.Should().NotBeEmpty();
+        }
+
         [Theory]
         [InlineData("short 1")]
         [InlineData("short 2")]

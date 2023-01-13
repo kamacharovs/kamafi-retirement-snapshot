@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\KamaFi.Retirement.Snapshot.Data.Migrations\KamaFi.Retirement.Snapshot.Data.Migrations.csproj" />
     <ProjectReference Include="..\KamaFi.Retirement.Snapshot.Data\KamaFi.Retirement.Snapshot.Data.csproj" />
     <ProjectReference Include="..\KamaFi.Retirement.Snapshot.Services\KamaFi.Retirement.Snapshot.Services.csproj" />
   </ItemGroup>

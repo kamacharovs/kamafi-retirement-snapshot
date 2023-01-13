@@ -1,4 +1,5 @@
 ﻿using KamaFi.Retirement.Snapshot.Data;
+using KamaFi.Retirement.Snapshot.Data.Migrations;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 
@@ -42,6 +43,18 @@ namespace KamaFi.Retirement.Snapshot.UnitTests
         public void Dispose()
         {
             Dispose(true);
+        }
+    }
+
+    public static class DatabaseFactoryExtensions
+    {
+        public static async Task<RetirementSnapshotDbContext> WithSeedAsync(this RetirementSnapshotDbContext context)
+        {
+            var fakeDataManager = new FakeDataManager(context);
+
+            await fakeDataManager.SeedDataAsync();
+
+            return context;
         }
     }
 }
