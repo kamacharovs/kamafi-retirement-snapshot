@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\KamaFi.Retirement.Snapshot.Application\KamaFi.Retirement.Snapshot.Application.csproj" />
+    <ProjectReference Include="..\KamaFi.Retirement.Snapshot.Common\KamaFi.Retirement.Snapshot.Common.csproj" />
+    <ProjectReference Include="..\KamaFi.Retirement.Snapshot.Domain\KamaFi.Retirement.Snapshot.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
