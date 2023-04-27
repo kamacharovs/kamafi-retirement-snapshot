@@ -1,5 +1,4 @@
-﻿using KamaFi.Retirement.Snapshot.Application.Commands;
-using KamaFi.Retirement.Snapshot.Application.Responses.Asset;
+﻿using KamaFi.Retirement.Snapshot.Application.Responses.Asset;
 using KamaFi.Retirement.Snapshot.Common.Interfaces;
 using KamaFi.Retirement.Snapshot.Domain.Aggregates;
 using KamaFi.Retirement.Snapshot.Domain.Entities.User;
@@ -41,6 +40,10 @@ namespace KamaFi.Retirement.Snapshot.Application.Commands.Handlers
             userAggregate.CreateAsset(assetEntity);
 
             var updatedUser = await _repo.UpdateAsync(userAggregate.User);
+
+            // In CosmosDB ES environment
+            // 1. Create the event (EventSourceService.Create())
+            // 2. Dispatch Domain Events (what to do when a domain entity has changed?) In our case, send message to EventHub
 
             return new CreateAssetResponse
             {
