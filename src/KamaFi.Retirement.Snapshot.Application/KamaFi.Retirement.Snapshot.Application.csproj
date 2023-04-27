@@ -6,4 +6,17 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\Handlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KamaFi.Retirement.Snapshot.Common\KamaFi.Retirement.Snapshot.Common.csproj" />
+    <ProjectReference Include="..\KamaFi.Retirement.Snapshot.Domain\KamaFi.Retirement.Snapshot.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
