@@ -17,7 +17,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KamaFi.Retirement.Snapshot.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KamaFi.Retirement.Snapshot.Calculators.UnitTests", "KamaFi.Retirement.Snapshot.Calculators.UnitTests\KamaFi.Retirement.Snapshot.Calculators.UnitTests.csproj", "{51E095D9-A10F-4BC0-8D8A-370355ACAE17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Background", "KamaFi.Retirement.Snapshot.Background\KamaFi.Retirement.Snapshot.Background.csproj", "{3CA6736C-3464-499D-8ADC-4F315B21A3F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KamaFi.Retirement.Snapshot.Background", "KamaFi.Retirement.Snapshot.Background\KamaFi.Retirement.Snapshot.Background.csproj", "{3CA6736C-3464-499D-8ADC-4F315B21A3F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KamaFi.Retirement.Snapshot.Domain", "src\KamaFi.Retirement.Snapshot.Domain\KamaFi.Retirement.Snapshot.Domain.csproj", "{7667BFC5-0776-4932-9CD3-9269242F8004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Infrastructure", "src\KamaFi.Retirement.Snapshot.Infrastructure\KamaFi.Retirement.Snapshot.Infrastructure.csproj", "{A934A885-FB01-4A85-9431-CFBFC2A973FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Application", "src\KamaFi.Retirement.Snapshot.Application\KamaFi.Retirement.Snapshot.Application.csproj", "{0AD0BAAA-5389-4396-A4C3-19A06408645E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Presentation", "src\KamaFi.Retirement.Snapshot.Presentation\KamaFi.Retirement.Snapshot.Presentation.csproj", "{67B71AD5-2773-443D-B9CA-A6D3B30BC7B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KamaFi.Retirement.Snapshot.Common", "src\KamaFi.Retirement.Snapshot.Common\KamaFi.Retirement.Snapshot.Common.csproj", "{C106664B-AB3B-4AA7-84C1-FD805A638332}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +67,26 @@ Global
 		{3CA6736C-3464-499D-8ADC-4F315B21A3F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CA6736C-3464-499D-8ADC-4F315B21A3F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CA6736C-3464-499D-8ADC-4F315B21A3F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7667BFC5-0776-4932-9CD3-9269242F8004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7667BFC5-0776-4932-9CD3-9269242F8004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7667BFC5-0776-4932-9CD3-9269242F8004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7667BFC5-0776-4932-9CD3-9269242F8004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A934A885-FB01-4A85-9431-CFBFC2A973FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A934A885-FB01-4A85-9431-CFBFC2A973FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A934A885-FB01-4A85-9431-CFBFC2A973FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A934A885-FB01-4A85-9431-CFBFC2A973FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AD0BAAA-5389-4396-A4C3-19A06408645E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AD0BAAA-5389-4396-A4C3-19A06408645E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AD0BAAA-5389-4396-A4C3-19A06408645E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AD0BAAA-5389-4396-A4C3-19A06408645E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67B71AD5-2773-443D-B9CA-A6D3B30BC7B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B71AD5-2773-443D-B9CA-A6D3B30BC7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B71AD5-2773-443D-B9CA-A6D3B30BC7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B71AD5-2773-443D-B9CA-A6D3B30BC7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C106664B-AB3B-4AA7-84C1-FD805A638332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C106664B-AB3B-4AA7-84C1-FD805A638332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C106664B-AB3B-4AA7-84C1-FD805A638332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C106664B-AB3B-4AA7-84C1-FD805A638332}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
