@@ -1,8 +1,6 @@
-﻿using KamaFi.Retirement.Snapshot.Common.Entities;
-
-namespace KamaFi.Retirement.Snapshot.Domain.Entities.Asset
+﻿namespace KamaFi.Retirement.Snapshot.Application.Requests.Asset
 {
-    public class AssetEntity : EntityBase
+    public class CreateAssetRequest
     {
         public string? Name { get; set; }
         public string? Type { get; set; }

@@ -1,10 +1,5 @@
 ﻿using KamaFi.Retirement.Snapshot.Domain.Entities.Asset;
 using KamaFi.Retirement.Snapshot.Domain.Entities.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KamaFi.Retirement.Snapshot.Domain.Aggregates
 {
@@ -12,9 +7,14 @@ namespace KamaFi.Retirement.Snapshot.Domain.Aggregates
     {
         public UserEntity User { get; set; }
 
-        public void AddAsset(AssetEntity asset)
+        public UserAggregate(UserEntity user)
         {
-            User.AddAsset(asset);
+            User = user;
+        }
+
+        public void CreateAsset(AssetEntity asset)
+        {
+            User.CreateAsset(asset);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace KamaFi.Retirement.Snapshot.Domain.Entities.User
         public IEnumerable<AssetEntity> Assets => _assets.AsReadOnly();
         public IEnumerable<LiabilityEntity> Liabilities => _liabilities.AsReadOnly();
 
-        public void AddAsset(AssetEntity asset)
+        public void CreateAsset(AssetEntity asset)
         {
             //Guard.Against.Null(newItem, nameof(newItem));
             _assets.Add(asset);
