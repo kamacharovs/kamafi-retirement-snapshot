@@ -18,6 +18,7 @@ namespace KamaFi.Retirement.Snapshot.Common.Events.Domain
             foreach (var entity in entitiesWithEvents)
             {
                 var events = entity.DomainEvents.ToArray();
+
                 entity.ClearDomainEvents();
 
                 foreach (var domainEvent in events)

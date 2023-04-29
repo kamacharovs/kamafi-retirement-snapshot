@@ -1,23 +1,41 @@
+using System.Text.Json.Serialization;
+using System.Text.Json;
+using KamaFi.Retirement.Snapshot.Common.Settings;
+using KamaFi.Retirement.Snapshot.Infrastructure.Factories.Interfaces;
+using KamaFi.Retirement.Snapshot.Infrastructure.Factories;
+using KamaFi.Retirement.Snapshot.Infrastructure.Repositories.Interfaces;
+using KamaFi.Retirement.Snapshot.Infrastructure.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+var config = builder.Configuration;
 
-// Add services to the container.
+services.Configure<CosmosDbSettings>(config.GetSection(CosmosDbSettings.Section));
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+services.AddScoped<ICosmosDbFactory, CosmosDbFactory>()
+    .AddScoped<IUserRepository, UserRepository>();
+
+services.AddControllers();
+services.AddHealthChecks();
+services.AddMvcCore()
+    .AddJsonOptions(x =>
+    {
+        x.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
 }
 
+app.UseRouting();
 app.UseAuthorization();
-
-app.MapControllers();
+app.UseEndpoints(e =>
+{
+    e.MapControllers();
+    e.MapHealthChecks("/health");
+});
 
 app.Run();

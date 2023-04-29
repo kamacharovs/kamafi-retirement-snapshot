@@ -1,23 +1,24 @@
-﻿using KamaFi.Retirement.Snapshot.Common.Interfaces;
-using KamaFi.Retirement.Snapshot.Domain.Entities.User;
+﻿using KamaFi.Retirement.Snapshot.Domain.Entities.User;
+using KamaFi.Retirement.Snapshot.Infrastructure.Factories.Interfaces;
+using KamaFi.Retirement.Snapshot.Infrastructure.Repositories.Interfaces;
 
 namespace KamaFi.Retirement.Snapshot.Infrastructure.Repositories
 {
-    public class UserRepository : IRepository<UserEntity>
+    public class UserRepository : CosmosDbRepository<UserEntity>, IUserRepository
     {
-        public UserRepository()
+        public override string ContainerName { get; } = "changefeed";
+
+        public UserRepository(ICosmosDbFactory factory)
+            : base(factory) { }
+
+        public async Task<UserEntity?> GetAsync(string id)
         {
-            
+            return await base.GetAsync(id);
         }
 
-        public Task<UserEntity> GetAsync(string id)
+        public async Task<UserEntity> AddAsync(UserEntity entity)
         {
-            return Task.FromResult(new UserEntity { Id = id });
-        }
-
-        public Task<UserEntity> UpdateAsync(UserEntity entity)
-        {
-            return Task.FromResult(entity);
+            return await base.AddAsync(entity);
         }
     }
 }
