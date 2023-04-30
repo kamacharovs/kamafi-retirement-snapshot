@@ -6,5 +6,6 @@ namespace KamaFi.Retirement.Snapshot.Application.Repositories.Interfaces
     {
         Task<UserEntity?> GetAsync(string id);
         Task<UserEntity> AddAsync(UserEntity entity);
+        Task<UserEntity> UpdateAsync(UserEntity entity);
     }
 }

@@ -1,12 +1,20 @@
 ﻿using KamaFi.Retirement.Snapshot.Common.Entities;
+using System.Text.Json.Serialization;
 
 namespace KamaFi.Retirement.Snapshot.Domain.Entities.Asset
 {
     public class AssetEntity : EntityBase
     {
-        public string? Name { get; set; }
-        public string? Type { get; set; }
-        public decimal Value { get; set; }
-        public string? UserId { get; set; }
+        [JsonInclude]
+        public string? Name { get; init; }
+
+        [JsonInclude]
+        public string? Type { get; init; }
+
+        [JsonInclude]
+        public decimal Value { get; init; }
+
+        [JsonInclude]
+        public string? UserId { get; init; }
     }
 }

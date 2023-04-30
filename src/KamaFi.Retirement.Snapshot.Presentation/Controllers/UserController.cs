@@ -1,11 +1,14 @@
+using KamaFi.Retirement.Snapshot.Application.Commands;
 using KamaFi.Retirement.Snapshot.Application.Queries;
+using KamaFi.Retirement.Snapshot.Application.Requests.Asset;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace KamaFi.Retirement.Snapshot.Presentation.Controllers
 {
     [ApiController]
-    [Route("v1/user")]
+    [Route("v1/users")]
     public class UserController : ControllerBase
     {
 
@@ -16,8 +19,12 @@ namespace KamaFi.Retirement.Snapshot.Presentation.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet(Name = "GetUserById")]
         [Route("{id}")]
         public async Task<IActionResult> GetAsync(string id) => Ok(await _mediator.Send(new GetUserByIdQuery(id)));
+
+        [HttpPost(Name = "CreateAsset")]
+        [Route("assets")]
+        public async Task<IActionResult> CreateAssetAsync([FromBody, Required] CreateAssetRequest request) => Ok(await _mediator.Send(new CreateAssetCommand(request)));
     }
 }

@@ -40,5 +40,12 @@ namespace KamaFi.Retirement.Snapshot.Infrastructure.Repositories
 
             return response;
         }
+
+        public async Task<T> UpdateAsync(T entity)
+        {
+            var response = await _container.UpsertItemAsync<T>(entity, new PartitionKey(entity.Id));
+
+            return response;
+        }
     }
 }

@@ -13,7 +13,14 @@ namespace KamaFi.Retirement.Snapshot.Infrastructure.Factories
         public CosmosDbFactory(IOptions<CosmosDbSettings> options)
         {
             _settings = options.Value;
-            _client = new CosmosClient(_settings.ConnectionString);
+            _client = new CosmosClient(_settings.ConnectionString,
+                new CosmosClientOptions
+                {
+                    SerializerOptions = new CosmosSerializationOptions
+                    {
+                        PropertyNamingPolicy = CosmosPropertyNamingPolicy.CamelCase
+                    }
+                });
         }
 
         private Database GetDatabase(string? databaseName = null) => _client.GetDatabase(databaseName ?? _settings.DatabaseName);

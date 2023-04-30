@@ -40,8 +40,8 @@ namespace KamaFi.Retirement.Snapshot.Application.Commands.Handlers
             // This will create a domain event
             userAggregate.CreateAsset(assetEntity);
 
-            var updatedUser = await _repo.AddAsync(userAggregate.User);
-            var entitiesWithEvents = new List<EntityBase> { userAggregate.User };
+            var updatedUser = await _repo.UpdateAsync(userAggregate.User);
+            var entitiesWithEvents = new List<EntityBase> { updatedUser };
 
             // In CosmosDB ES environment
             // 1. Create the event (EventSourceService.Create())
@@ -50,7 +50,11 @@ namespace KamaFi.Retirement.Snapshot.Application.Commands.Handlers
 
             return new CreateAssetResponse
             {
-                Id = "t"
+                Id = assetEntity.Id,
+                Name = assetEntity.Name,
+                Type = assetEntity.Type,
+                Value = assetEntity.Value,
+                UserId = assetEntity.UserId
             };
         }
     }
