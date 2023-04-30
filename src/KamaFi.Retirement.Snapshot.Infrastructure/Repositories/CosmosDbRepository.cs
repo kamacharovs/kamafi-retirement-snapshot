@@ -1,6 +1,6 @@
 ﻿using KamaFi.Retirement.Snapshot.Common.Interfaces;
-using KamaFi.Retirement.Snapshot.Infrastructure.Factories.Interfaces;
-using KamaFi.Retirement.Snapshot.Infrastructure.Repositories.Interfaces;
+using KamaFi.Retirement.Snapshot.Application.Factories.Interfaces;
+using KamaFi.Retirement.Snapshot.Application.Repositories.Interfaces;
 using Microsoft.Azure.Cosmos;
 
 namespace KamaFi.Retirement.Snapshot.Infrastructure.Repositories

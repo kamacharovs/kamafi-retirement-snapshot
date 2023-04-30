@@ -1,4 +1,4 @@
-using KamaFi.Retirement.Snapshot.Infrastructure.Repositories.Interfaces;
+using KamaFi.Retirement.Snapshot.Application.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KamaFi.Retirement.Snapshot.Presentation.Controllers

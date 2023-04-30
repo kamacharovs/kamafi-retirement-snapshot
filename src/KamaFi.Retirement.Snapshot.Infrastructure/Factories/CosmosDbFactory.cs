@@ -1,5 +1,5 @@
 ﻿using KamaFi.Retirement.Snapshot.Common.Settings;
-using KamaFi.Retirement.Snapshot.Infrastructure.Factories.Interfaces;
+using KamaFi.Retirement.Snapshot.Application.Factories.Interfaces;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Options;
 

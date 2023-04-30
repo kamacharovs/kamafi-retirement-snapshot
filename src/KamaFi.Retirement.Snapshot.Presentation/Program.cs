@@ -1,9 +1,9 @@
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using KamaFi.Retirement.Snapshot.Common.Settings;
-using KamaFi.Retirement.Snapshot.Infrastructure.Factories.Interfaces;
+using KamaFi.Retirement.Snapshot.Application.Factories.Interfaces;
+using KamaFi.Retirement.Snapshot.Application.Repositories.Interfaces;
 using KamaFi.Retirement.Snapshot.Infrastructure.Factories;
-using KamaFi.Retirement.Snapshot.Infrastructure.Repositories.Interfaces;
 using KamaFi.Retirement.Snapshot.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -3,7 +3,6 @@ using KamaFi.Retirement.Snapshot.Common.Interfaces;
 using KamaFi.Retirement.Snapshot.Domain.Entities.Asset;
 using KamaFi.Retirement.Snapshot.Domain.Entities.Liability;
 using KamaFi.Retirement.Snapshot.Domain.Events.Asset;
-using System;
 
 namespace KamaFi.Retirement.Snapshot.Domain.Entities.User
 {

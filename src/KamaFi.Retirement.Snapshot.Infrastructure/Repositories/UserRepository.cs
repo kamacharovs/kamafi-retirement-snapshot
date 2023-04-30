@@ -1,6 +1,6 @@
 ﻿using KamaFi.Retirement.Snapshot.Domain.Entities.User;
-using KamaFi.Retirement.Snapshot.Infrastructure.Factories.Interfaces;
-using KamaFi.Retirement.Snapshot.Infrastructure.Repositories.Interfaces;
+using KamaFi.Retirement.Snapshot.Application.Factories.Interfaces;
+using KamaFi.Retirement.Snapshot.Application.Repositories.Interfaces;
 
 namespace KamaFi.Retirement.Snapshot.Infrastructure.Repositories
 {
@@ -10,15 +10,5 @@ namespace KamaFi.Retirement.Snapshot.Infrastructure.Repositories
 
         public UserRepository(ICosmosDbFactory factory)
             : base(factory) { }
-
-        public async Task<UserEntity?> GetAsync(string id)
-        {
-            return await base.GetAsync(id);
-        }
-
-        public async Task<UserEntity> AddAsync(UserEntity entity)
-        {
-            return await base.AddAsync(entity);
-        }
     }
 }

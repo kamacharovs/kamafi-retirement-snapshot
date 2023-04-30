@@ -1,6 +1,6 @@
 ﻿using KamaFi.Retirement.Snapshot.Domain.Entities.User;
 
-namespace KamaFi.Retirement.Snapshot.Infrastructure.Repositories.Interfaces
+namespace KamaFi.Retirement.Snapshot.Application.Repositories.Interfaces
 {
     public interface IUserRepository
     {

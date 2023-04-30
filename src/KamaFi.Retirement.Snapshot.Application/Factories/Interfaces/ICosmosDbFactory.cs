@@ -1,6 +1,6 @@
 ﻿using Microsoft.Azure.Cosmos;
 
-namespace KamaFi.Retirement.Snapshot.Infrastructure.Factories.Interfaces
+namespace KamaFi.Retirement.Snapshot.Application.Factories.Interfaces
 {
     public interface ICosmosDbFactory
     {
