@@ -6,7 +6,7 @@ namespace KamaFi.Retirement.Snapshot.Infrastructure.Repositories
 {
     public class UserRepository : CosmosDbRepository<UserEntity>, IUserRepository
     {
-        public override string ContainerName { get; } = "changefeed";
+        public override string ContainerName { get; } = "user-event-store";
 
         public UserRepository(ICosmosDbFactory factory)
             : base(factory) { }

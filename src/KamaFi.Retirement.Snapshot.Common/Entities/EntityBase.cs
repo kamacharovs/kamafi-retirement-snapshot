@@ -1,6 +1,6 @@
-﻿
-using KamaFi.Retirement.Snapshot.Common.Events.Domain;
+﻿using KamaFi.Retirement.Snapshot.Common.Events.Domain;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace KamaFi.Retirement.Snapshot.Common.Entities
 {
@@ -11,6 +11,7 @@ namespace KamaFi.Retirement.Snapshot.Common.Entities
         public string Id { get; set; } = Guid.NewGuid().ToString();
 
         [NotMapped]
+        [JsonIgnore]
         public IEnumerable<DomainEventBase> DomainEvents => _domainEvents.AsReadOnly();
 
         protected void RegisterDomainEvent(DomainEventBase domainEvent) => _domainEvents.Add(domainEvent);
