@@ -3,13 +3,5 @@ using MediatR;
 
 namespace KamaFi.Retirement.Snapshot.Application.Queries
 {
-    public class GetUserByIdQuery : IRequest<UserEntity>
-    {
-        public string Id { get; set; }
-
-        public GetUserByIdQuery(string id)
-        {
-            Id = id;
-        }
-    }
+    public sealed record GetUserByIdQuery(string Id) : IRequest<UserEntity>;
 }

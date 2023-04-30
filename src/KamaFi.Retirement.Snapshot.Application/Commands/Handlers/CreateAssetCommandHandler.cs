@@ -1,20 +1,20 @@
 ﻿using KamaFi.Retirement.Snapshot.Application.Responses.Asset;
 using KamaFi.Retirement.Snapshot.Common.Interfaces;
 using KamaFi.Retirement.Snapshot.Domain.Aggregates;
-using KamaFi.Retirement.Snapshot.Domain.Entities.User;
 using KamaFi.Retirement.Snapshot.Domain.Entities.Asset;
 using MediatR;
 using KamaFi.Retirement.Snapshot.Common.Entities;
+using KamaFi.Retirement.Snapshot.Application.Repositories.Interfaces;
 
 namespace KamaFi.Retirement.Snapshot.Application.Commands.Handlers
 {
     public class CreateAssetCommandHandler : IRequestHandler<CreateAssetCommand, CreateAssetResponse>
     {
-        private readonly IRepository<UserEntity> _repo;
+        private readonly IUserRepository _repo;
         private readonly IDomainEventDispatcher _domainEventDispatcher;
 
         public CreateAssetCommandHandler(
-            IRepository<UserEntity> repo,
+            IUserRepository repo,
             IDomainEventDispatcher domainEventDispatcher)
         {
             _repo = repo;

@@ -1,4 +1,5 @@
-using KamaFi.Retirement.Snapshot.Application.Repositories.Interfaces;
+using KamaFi.Retirement.Snapshot.Application.Queries;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KamaFi.Retirement.Snapshot.Presentation.Controllers
@@ -8,18 +9,15 @@ namespace KamaFi.Retirement.Snapshot.Presentation.Controllers
     public class UserController : ControllerBase
     {
 
-        private readonly IUserRepository _repo;
+        private readonly IMediator _mediator;
 
-        public UserController(IUserRepository repo)
+        public UserController(IMediator mediator)
         {
-            _repo = repo;
+            _mediator = mediator;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
         [Route("{id}")]
-        public async Task<IActionResult> GetAsync(string id)
-        {
-            return Ok(await _repo.GetAsync(id));
-        }
+        public async Task<IActionResult> GetAsync(string id) => Ok(await _mediator.Send(new GetUserByIdQuery(id)));
     }
 }

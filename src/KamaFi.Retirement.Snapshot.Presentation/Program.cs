@@ -5,15 +5,23 @@ using KamaFi.Retirement.Snapshot.Application.Factories.Interfaces;
 using KamaFi.Retirement.Snapshot.Application.Repositories.Interfaces;
 using KamaFi.Retirement.Snapshot.Infrastructure.Factories;
 using KamaFi.Retirement.Snapshot.Infrastructure.Repositories;
+using KamaFi.Retirement.Snapshot.Application.Queries;
+using KamaFi.Retirement.Snapshot.Common.Interfaces;
+using KamaFi.Retirement.Snapshot.Common.Events.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 var config = builder.Configuration;
 
 services.Configure<CosmosDbSettings>(config.GetSection(CosmosDbSettings.Section));
+services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssemblyContaining<GetUserByIdQuery>();
+});
 
-services.AddScoped<ICosmosDbFactory, CosmosDbFactory>()
-    .AddScoped<IUserRepository, UserRepository>();
+services.AddTransient<IDomainEventDispatcher, DomainEventDispatcher>()
+    .AddTransient<ICosmosDbFactory, CosmosDbFactory>()
+    .AddTransient<IUserRepository, UserRepository>();
 
 services.AddControllers();
 services.AddHealthChecks();
