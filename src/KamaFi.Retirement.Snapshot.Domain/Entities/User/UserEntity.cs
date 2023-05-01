@@ -3,15 +3,13 @@ using KamaFi.Retirement.Snapshot.Common.Interfaces;
 using KamaFi.Retirement.Snapshot.Domain.Entities.Asset;
 using KamaFi.Retirement.Snapshot.Domain.Entities.Liability;
 using KamaFi.Retirement.Snapshot.Domain.Events.Asset;
+using KamaFi.Retirement.Snapshot.Domain.Events.Liability;
 using System.Text.Json.Serialization;
 
 namespace KamaFi.Retirement.Snapshot.Domain.Entities.User
 {
     public class UserEntity : EntityBase, IAggregateRoot
     {
-
-        private readonly List<LiabilityEntity> _liabilities = new();
-
         [JsonInclude]
         public string? FirstName { get; init; }
 
@@ -25,14 +23,22 @@ namespace KamaFi.Retirement.Snapshot.Domain.Entities.User
         public List<AssetEntity> Assets { get; init; } = new List<AssetEntity>();
 
         [JsonInclude]
-        public IEnumerable<LiabilityEntity> Liabilities => _liabilities.AsReadOnly();
+        public List<LiabilityEntity> Liabilities { get; init; } = new List<LiabilityEntity>();
 
         public void CreateAsset(AssetEntity asset)
         {
-            //Guard.Against.Null(newItem, nameof(newItem));
             Assets.Add(asset);
 
-            var assetCreatedEvent = new AssetCreatedEvent();
+            var assetCreatedEvent = new AssetCreatedEvent(asset);
+
+            base.RegisterDomainEvent(assetCreatedEvent);
+        }
+
+        public void CreateLiability(LiabilityEntity liability)
+        {
+            Liabilities.Add(liability);
+
+            var assetCreatedEvent = new LiabilityCreatedEvent(liability);
 
             base.RegisterDomainEvent(assetCreatedEvent);
         }
