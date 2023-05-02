@@ -28,6 +28,13 @@ namespace KamaFi.Retirement.Snapshot.Presentation.Controllers
         [Route("assets")]
         public async Task<IActionResult> CreateAssetAsync([FromBody, Required] CreateAssetRequest request) => Ok(await _mediator.Send(new CreateAssetCommand(request)));
 
+        [HttpPatch(Name = "UpdateAssetValue")]
+        [Route("{userId}/assets/{assetId}")]
+        public async Task<IActionResult> UpdateAssetAsync(
+            [FromRoute, Required] string userId,
+            [FromRoute, Required] string assetId,
+            [FromBody, Required] UpdateAssetRequest request) => Ok(await _mediator.Send(new UpdateAssetValueCommand(userId, assetId, request)));
+
         [HttpPost(Name = "CreateLiability")]
         [Route("liabilities")]
         public async Task<IActionResult> CreateLiabilityAsync([FromBody, Required] CreateLiabilityRequest request) => Ok(await _mediator.Send(new CreateLiabilityCommand(request)));

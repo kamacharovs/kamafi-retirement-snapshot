@@ -12,7 +12,7 @@ namespace KamaFi.Retirement.Snapshot.Domain.Entities.Asset
         public string? Type { get; init; }
 
         [JsonInclude]
-        public decimal Value { get; init; }
+        public decimal Value { get; set; }
 
         [JsonInclude]
         public string? UserId { get; init; }

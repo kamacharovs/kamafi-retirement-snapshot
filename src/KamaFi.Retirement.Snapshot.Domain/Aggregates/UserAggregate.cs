@@ -13,14 +13,10 @@ namespace KamaFi.Retirement.Snapshot.Domain.Aggregates
             User = user;
         }
 
-        public void CreateAsset(AssetEntity asset)
-        {
-            User.CreateAsset(asset);
-        }
+        public void CreateAsset(AssetEntity asset) => User.CreateAsset(asset);
 
-        public void CreateLiability(LiabilityEntity liability)
-        {
-            User.CreateLiability(liability);
-        }
+        public AssetEntity UpdateAssetValue(string id, decimal value) => User.UpdateAssetValue(id, value);
+
+        public void CreateLiability(LiabilityEntity liability) => User.CreateLiability(liability);
     }
 }

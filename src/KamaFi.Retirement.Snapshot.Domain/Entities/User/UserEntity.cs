@@ -34,6 +34,18 @@ namespace KamaFi.Retirement.Snapshot.Domain.Entities.User
             base.RegisterDomainEvent(assetCreatedEvent);
         }
 
+        public AssetEntity UpdateAssetValue(string id, decimal value)
+        {
+            var asset = Assets.FirstOrDefault(a => a.Id == id) 
+                ?? throw new Exception("Null Asset");
+
+            asset.Value = value;
+
+            base.RegisterDomainEvent(new AssetValueUpdatedEvent(id, value));
+
+            return asset;
+        }
+
         public void CreateLiability(LiabilityEntity liability)
         {
             Liabilities.Add(liability);

@@ -28,7 +28,7 @@ namespace KamaFi.Retirement.Snapshot.Application.Commands.Handlers
             if (request.UserId == null) throw new Exception("Not found");
 
             var user = await _repo.GetAsync(request.UserId!);
-            var userAggregate = new UserAggregate(user);
+            var userAggregate = new UserAggregate(user!);
             var assetEntity = new AssetEntity
             {
                 Name = request.Name,
